@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'vitest';
-import {getCurrentYear, add, isWithinRange, isDateBefore, isSameDay} from '../dateUtils';
+import {getCurrentYear, add, isWithinRange, isDateBefore, issameDay} from '../dateUtils';
 import { DATE_UNIT_TYPES } from '../constants';
 
 // GREEN PHASE
@@ -82,7 +82,7 @@ describe("GREEN PHASE", () => {
     it('checks if two dates are the same day', () => {
       const date = new Date(2024, 0, 4); // January 4, 2024
       const compareDate = new Date(2024, 0, 4); // January 4, 2024
-      const result = isSameDay(date, compareDate);
+      const result = issameDay(date, compareDate);
       expect(result).toBe(true);
     });
   });
@@ -159,14 +159,14 @@ describe("RED PHASE", () => {
     it('checks if two dates are the same day', () => {
       const date = new Date(2024, 0, 4); // 2024-01-04
       const compareDate = new Date(2024, 0, 4); // 2024-01-04
-      const result = isSameDay(date, compareDate);
+      const result = issameDay(date, compareDate);
       expect(result).not.toBe(false);
     });
 
     it('checks if two dates are the same day', () => {
       const date = new Date(2024, 0, 10); // 2024-01-04
       const compareDate = new Date(2024, 0, 4); // 2024-01-04
-      const result = isSameDay(date, compareDate);
+      const result = issameDay(date, compareDate);
       expect(result).not.toBe(true);
     });
   });
