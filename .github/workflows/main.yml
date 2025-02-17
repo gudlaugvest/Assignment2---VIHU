@@ -42,7 +42,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+      
+      - name: Install @vitest/coverage-v8 manually
+        run: npm install --save-dev @vitest/coverage-v8
 
       - name: Run tests and generate coverage report
         run: npm test --coverage
