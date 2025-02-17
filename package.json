@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "vitest --coverage --coverage-provider=c8",
+    "test": "vitest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [],
