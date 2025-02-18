@@ -1,11 +1,14 @@
 {
-  "name": "assignment-2-testing",
+  "name": "@gudlaugvest/vihu-assignment-2-testing",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "test": "vitest --coverage",
     "typecheck": "tsc --noEmit",
     "build": "tsc"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [],
   "author": "",
