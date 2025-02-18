@@ -81,8 +81,9 @@ jobs:
         run: |
           echo "@gudlaugvest:registry=https://npm.pkg.github.com/" > .npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+          cat ~/.npmrc  # Debugging step to check if .npmrc is correct
 
       - name: Publish package
-        run: npm publish
+        run: npm publish --registry=https://npm.pkg.github.com/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
