@@ -8,13 +8,12 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   typecheck:
     name: Type Checking
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repositor
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
