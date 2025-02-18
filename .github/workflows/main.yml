@@ -57,6 +57,9 @@ jobs:
           retention-days: 5
 
   publish:
+    permissions:
+      contents: read
+      packages: write
     name: Publish to GitHub Packages
     runs-on: ubuntu-latest
     needs: test
