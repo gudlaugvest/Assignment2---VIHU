@@ -89,4 +89,6 @@ jobs:
       
       
       - name: Publish package
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm publish --access public
