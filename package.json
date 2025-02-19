@@ -1,7 +1,7 @@
 {
   "name": "@gudlaugvest/vihu-assignment-2-testing",
   "version": "1.0.2",
-  "description": "",
+  "description": "This assignment is a unit test assignment, the library used is an outdated date library and I am tasked with writing unit test from the functions in ´src/dateUtils.ts´ as well as replacing the outdate library with a newer one in this case **date-fns. I am also tasked with adding type definition to the ´src/dateUtils.ts´ file.",
   "scripts": {
     "test": "vitest --coverage",
     "typecheck": "tsc --noEmit",
@@ -17,9 +17,25 @@
     "moment": "^2.29.4"
   },
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
     "@vitest/coverage-v8": "^3.0.5",
-    "vitest": "^3.0.5",
     "date-fns": "^4.1.0",
-    "typescript": "^4.9.5"
-  }
+    "eslint": "^9.20.1",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.1",
+    "typescript": "^4.9.5",
+    "typescript-eslint": "^8.24.1",
+    "vitest": "^3.0.5"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gudlaugvest/Assignment2---VIHU.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gudlaugvest/Assignment2---VIHU/issues"
+  },
+  "homepage": "https://github.com/gudlaugvest/Assignment2---VIHU#readme"
 }
