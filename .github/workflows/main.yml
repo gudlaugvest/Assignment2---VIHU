@@ -106,4 +106,4 @@ jobs:
         run: npm install
 
       - name: Run ESLint
-        run: npx eslint . --ext .js
+        run: npx eslint .
