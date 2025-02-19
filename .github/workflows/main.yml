@@ -88,4 +88,4 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
       
       - name: Publish package
-        run: npm publish --registry=https://npm.pkg.github.com/ --access public
+        run: npm publish --access public
