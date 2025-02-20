@@ -1,6 +1,6 @@
 {
   "name": "@gudlaugvest/vihu-assignment-2-testing",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "scripts": {
     "test": "vitest --coverage",
     "typecheck": "tsc --noEmit",
