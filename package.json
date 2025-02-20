@@ -30,6 +30,7 @@
     "vitest": "^3.0.5"
   },
   "main": "index.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gudlaugvest/Assignment2---VIHU.git"
