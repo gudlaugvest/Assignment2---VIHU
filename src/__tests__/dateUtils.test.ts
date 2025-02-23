@@ -1,12 +1,17 @@
-import {describe, expect, it} from 'vitest';
-import {getCurrentYear, add, isWithinRange, isDateBefore, issameDay} from '../dateUtils';
+import { describe, expect, it } from 'vitest';
+import {
+  getCurrentYear,
+  add,
+  isWithinRange,
+  isDateBefore,
+  issameDay,
+} from '../dateUtils';
 import { DATE_UNIT_TYPES } from '../constants';
 
 // GREEN PHASE
-describe("GREEN PHASE", () => {
-
+describe('GREEN PHASE', () => {
   // getCurrentYear
-  describe("getCurrentYear", () => {
+  describe('getCurrentYear', () => {
     it('returns the current year', () => {
       const year = getCurrentYear();
       expect(year).toBe(new Date().getFullYear()); // 2024
@@ -14,7 +19,7 @@ describe("GREEN PHASE", () => {
   });
 
   // add
-  describe("add", () => {
+  describe('add', () => {
     it('adds a number of days to a date', () => {
       const date = new Date(2024, 0, 1);
       const newDate = add(date, 10, DATE_UNIT_TYPES.DAYS); // 10 days after January 1, 2024
@@ -43,12 +48,10 @@ describe("GREEN PHASE", () => {
       const date = new Date(2023, 0, 1);
       const newDate = add(date, 1, DATE_UNIT_TYPES.YEARS); // 1 year after January 1, 2023
     });
-
   });
 
-
   // isWithinRange
-  describe("isWithinRange", () => {
+  describe('isWithinRange', () => {
     it('checks if a date is within a range', () => {
       const date = new Date(2024, 0, 4); // January 4, 2024, a date within the range
       const from = new Date(2024, 0, 1); // January 1, 2024, start of the range
@@ -56,19 +59,18 @@ describe("GREEN PHASE", () => {
       const result = isWithinRange(date, from, to);
       expect(result).toBe(true);
     });
-  
+
     it('checks if February 29 in a leap year is within a range that spans multiple months', () => {
       const date = new Date(2024, 1, 29);
-      const from = new Date(2024, 0, 1); 
-      const to = new Date(2024, 2, 31); 
+      const from = new Date(2024, 0, 1);
+      const to = new Date(2024, 2, 31);
       const result = isWithinRange(date, from, to);
       expect(result).toBe(true);
     });
-
   });
 
   // isDateBefore
-  describe("isDateBefore", () =>  {
+  describe('isDateBefore', () => {
     it('checks if a date is before another date', () => {
       const date = new Date(2024, 0, 4); // January 4, 2024
       const compareDate = new Date(2024, 0, 10); // January 10, 2024
@@ -78,7 +80,7 @@ describe("GREEN PHASE", () => {
   });
 
   // isSameDay
-  describe("isSameDay", () => {
+  describe('isSameDay', () => {
     it('checks if two dates are the same day', () => {
       const date = new Date(2024, 0, 4); // January 4, 2024
       const compareDate = new Date(2024, 0, 4); // January 4, 2024
@@ -86,14 +88,12 @@ describe("GREEN PHASE", () => {
       expect(result).toBe(true);
     });
   });
-
 });
 
-
 // RED PHASE
-describe("RED PHASE", () => {
-   // getCurrentYear
-   describe("getCurrentYear", () => {
+describe('RED PHASE', () => {
+  // getCurrentYear
+  describe('getCurrentYear', () => {
     it('returns the current year', () => {
       const year = getCurrentYear();
       expect(year).not.toBe(new Date(1994));
@@ -101,7 +101,7 @@ describe("RED PHASE", () => {
   });
 
   // add
-  describe("add", () => {
+  describe('add', () => {
     it('adds a number of days to a date', () => {
       const date = new Date(2024, 0, 1);
       const newDate = add(date, 10);
@@ -115,9 +115,8 @@ describe("RED PHASE", () => {
     });
   });
 
-
   // isWithinRange
-  describe("isWithinRange", () => {
+  describe('isWithinRange', () => {
     it('checks if a date is within a range', () => {
       const date = new Date(2024, 0, 4); // 2024-01-04, a date within the range
       const from = new Date(2024, 0, 1); // 2024-01-01, start of the range
@@ -133,11 +132,10 @@ describe("RED PHASE", () => {
       const result = isWithinRange(date, from, to);
       expect(result).not.toBe(true);
     });
-
   });
 
   // isDateBefore
-  describe("isDateBefore", () =>  {
+  describe('isDateBefore', () => {
     it('checks if a date is before another date', () => {
       const date = new Date(2024, 0, 4); // 2024-01-04
       const compareDate = new Date(2024, 0, 10); // 2024-01-10
@@ -152,10 +150,9 @@ describe("RED PHASE", () => {
       expect(result).not.toBe(true);
     });
   });
-
 
   // isSameDay
-  describe("isSameDay", () => {
+  describe('isSameDay', () => {
     it('checks if two dates are the same day', () => {
       const date = new Date(2024, 0, 4); // 2024-01-04
       const compareDate = new Date(2024, 0, 4); // 2024-01-04
@@ -170,6 +167,4 @@ describe("RED PHASE", () => {
       expect(result).not.toBe(true);
     });
   });
-
-
 });

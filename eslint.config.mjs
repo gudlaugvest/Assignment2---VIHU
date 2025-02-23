@@ -1,23 +1,24 @@
-import js from "@eslint/js";
-import prettier from "eslint-config-prettier";
+import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
 
 export default [
-  js.configs.recommended, 
-  prettier, 
+  js.configs.recommended,
+  prettier,
 
   {
     rules: {
-      "camelcase": ["error", { properties: "always" }],
+      camelcase: ['error', { properties: 'always' }],
 
-      "no-restricted-imports": [
-        "error",
+      'no-restricted-imports': [
+        'error',
         {
-          name: "moment",
-          message: "Usage of moment.js is forbidden. Consider using date-fns or native Date API.",
+          name: 'moment',
+          message:
+            'Usage of moment.js is forbidden. Consider using date-fns or native Date API.',
         },
       ],
 
-      "no-console": ["error", { allow: ["warn", "error"] }],
+      'no-console': ['error', { allow: ['warn', 'error'] }],
     },
   },
 ];

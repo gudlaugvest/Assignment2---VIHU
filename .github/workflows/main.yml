@@ -40,7 +40,6 @@ jobs:
         with:
           node-version: 20
 
-
       - name: Install dependencies
         run: npm ci
 
@@ -58,7 +57,6 @@ jobs:
           retention-days: 5
 
   publish:
-    
     name: Publish Package
     runs-on: ubuntu-latest
     needs: test
@@ -74,7 +72,6 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.org
-
 
       - name: Install Dependencies
         run: npm install
@@ -107,3 +104,24 @@ jobs:
 
       - name: Run ESLint
         run: npx eslint .
+
+      - name: Run ESLint Fix
+        run: npx eslint . --fix
+
+  prettier:
+    name: Check Prettier Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Prettier
+        run: npx prettier --check .
